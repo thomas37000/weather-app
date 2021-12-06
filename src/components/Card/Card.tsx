@@ -1,6 +1,7 @@
 import { IWeather } from "../../interfaces/weather-interface";
 import "./Card.css";
 
+
 const CardWeather = (props: { city: IWeather }) => {
   const { city } = props;
 

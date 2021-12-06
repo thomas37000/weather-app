@@ -20,9 +20,16 @@ const Search = () => {
         `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=98b7465353d383f3d0f3bc4a284a48ae`
       )
       .then((response: AxiosResponse) => {
-        console.log("axios", response.data);
+        console.log("axios", response.data.city);
+        setWeather(response.data);
       });
   }, []);
+
+//   const fetchApi =
+//     weather &&
+//     weather.map((city: IWeather) => {
+//       return <CardWeather city={city} />;
+//     });
 
   const searchCities = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -52,6 +59,7 @@ const Search = () => {
       <div>
         <Calendar />
       </div>
+      {/* <div>{fetchApi}</div> */}
     </>
   );
 };
