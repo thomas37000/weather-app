@@ -8,6 +8,7 @@ const CardWeather = (props: { city: IWeather }) => {
     <div>
       <div className="weather">
         <h2 className="city">{city.name}</h2>
+        <div className="date"></div>
       </div>
     </div>
   );

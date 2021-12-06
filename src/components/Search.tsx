@@ -3,6 +3,7 @@ import { IWeather } from "../interfaces/weather-interface";
 import { ApiUrl } from "../api/api";
 import CardWeather from "./Card/Card";
 import "./Search.css";
+import Calendar from "./Calendar";
 
 const Search = () => {
   const [cities, setCities] = useState<IWeather | string>("");
@@ -22,6 +23,12 @@ const Search = () => {
       });
   }, []);
 
+  function makeDate(date: Date) {
+    return new Date(date.getTime());
+  }
+  const newDate = new Date();
+  console.log("date", makeDate(newDate));
+
   return (
     <>
       <div className="search">
@@ -38,6 +45,12 @@ const Search = () => {
           <input type="submit" value="Submit" className="submit" />
         </form>
       </div>
+      <Calendar />
+      {/* <div>
+       {cities && cities.map((city, i) => {
+      return <CardWeather key={i} city={city} />;
+    });}
+      </div> */}
     </>
   );
 };
