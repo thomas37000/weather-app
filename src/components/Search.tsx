@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { IWeather } from "../interfaces/weather-interface";
 import "./Search.css";
 
-function Search() {
+const Search = (props: { city: IWeather }) => {
+  const { city } = props;
+  
+  const [cities, setCities] = useState("");
+
   const { Api_key } = process.env;
 
   return (
@@ -14,6 +19,7 @@ function Search() {
             id="searchBar"
             className="search-bar"
             placeholder="Lyon"
+            onChange={(e) => setCities(e.target.value)}
           />
 
           <input type="submit" value="Submit" className="submit" />
@@ -21,6 +27,6 @@ function Search() {
       </div>
     </>
   );
-}
+};
 
 export default Search;
