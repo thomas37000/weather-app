@@ -1,9 +1,23 @@
-.search-bar {
+.search-bar,
+.submit {
   outline: 0;
-  background: #f2f2f2;
-  width: 30%;
-  margin: 0 0 15px;
   padding: 15px;
   border: 0;
   border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 15px;
+}
+
+.search-bar {
+  background: #f2f2f2;
+  width: 30%;
+}
+
+.submit {
+  width: 100px;
+  color: #f1f1f1;
+  background-color: #1fb264;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
