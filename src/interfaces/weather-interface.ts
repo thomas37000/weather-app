@@ -5,9 +5,9 @@ export interface IWeather {
 
 export interface Data {
   id: number;
-  name: string;
+  name: string | undefined;
 }
 
 export interface Main {
-  temp: number;
+  temp: number | undefined;
 }

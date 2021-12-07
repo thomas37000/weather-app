@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { Data } from "../interfaces/weather-interface";
+import { IWeather, Data, Main} from "../interfaces/weather-interface";
 import "./Search.css";
-import Calendar from "./Calendar";
 import { fetchWeather } from "../api/api";
 
-const Search = () => {
+const Search: React.FC<IWeather> = ({data, main}) => {
   const [cities, setCities] = useState<string>("");
-  console.log("villes", cities);
-
-  const [weather, setWeather] = useState<Data[]>([]);
-  console.log("temps", weather);
+  const [weather, setWeather] = useState<IWeather[]>([]);
 
   const search = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -44,6 +40,22 @@ const Search = () => {
           onKeyPress={search}
         />
       </div>
+
+      {weather.main && (
+        <>
+          <div className="city">
+            <h2 className="">
+              <span>{weather.name}</span>
+            </h2>
+            <div className="city-temp">
+              <h3>
+                {Math.round(weather.main.temp)}
+                <sup>&deg;C</sup>
+              </h3>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };
