@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { IWeather } from "../interfaces/weather-interface";
+import { Data } from "../interfaces/weather-interface";
 import CardWeather from "./Card/Card";
 import "./Search.css";
 import Calendar from "./Calendar";
 import axios, { AxiosResponse } from "axios";
 
 const Search = () => {
-  const [cities, setCities] = useState<IWeather | string>("");
+  const [cities, setCities] = useState<string>("");
   console.log("villes", cities);
 
-  const [weather, setWeather] = useState<IWeather[]>([]);
+  const [weather, setWeather] = useState<Data[]>([]);
   console.log("temps", weather);
 
   const Api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     axios
-      .get<IWeather[]>(
+      .get<Data[]>(
         `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=98b7465353d383f3d0f3bc4a284a48ae`
       )
       .then((response: AxiosResponse) => {
@@ -25,11 +25,6 @@ const Search = () => {
       });
   }, []);
 
-//   const fetchApi =
-//     weather &&
-//     weather.map((city: IWeather) => {
-//       return <CardWeather city={city} />;
-//     });
 
   const searchCities = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

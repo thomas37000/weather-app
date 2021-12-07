@@ -1,8 +1,8 @@
-import { IWeather } from "../../interfaces/weather-interface";
+import { Data } from "../../interfaces/weather-interface";
 import "./Card.css";
 
 
-const CardWeather = (props: { city: IWeather }) => {
+const CardWeather = (props: { city: Data }) => {
   const { city } = props;
 
   return (
