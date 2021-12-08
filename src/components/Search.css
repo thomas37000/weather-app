@@ -52,3 +52,23 @@
 .temp, .city-temp {
     margin: 1rem 0;
 }
+
+.warm-list {
+  width: 600px;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+.warm-cities {
+  margin-top: 1rem;
+}
+
+.vacation {
+  margin-top: 5rem;
+  background: rgb(238, 238, 238);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 238, 238, 1) 0%,
+    rgba(2, 255, 163, 1) 100%
+  );
+}
