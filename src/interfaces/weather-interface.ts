@@ -1,20 +1,34 @@
+// export interface IWeather {
+//   data: Array<Data>;    
+//   main: Array<Main>;
+// }
+
 export interface IWeather {
-  data: Array<Data>;    
-  main: Array<Main>;
+  name?: string;
+  main: {
+    temp?: number;
+  }[]
 }
 
 export interface Data {
   id: number;
-  name: string | undefined;
+  name?: string;
 }
 
-export interface Main {
-  temp: number | undefined;
-}
+// export interface Main {
+//   main: {
+//     temp?: number;
+//   }[]
+// }
 
 
-export interface Weather {
-  id: number;
-  name: string | null;
-  temp: number | null;
-}
+// export interface Weather {
+//   id: number;
+//   name: string | null;
+//   temp: number | null;
+// }
+
+
+// export interface Weather {
+//   [prop:string]:string;
+// }

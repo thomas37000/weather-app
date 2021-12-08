@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Weather } from "../interfaces/weather-interface";
+import { IWeather } from "../interfaces/weather-interface";
 import "./Search.css";
 import { fetchWeather } from "../api/api";
 
-const Search: React.FC<Weather> = () => {
+const Search: React.FC<IWeather> = () => {
   const [cities, setCities] = useState<string>("");
   const [weather, setWeather] = useState<{}>({});
 

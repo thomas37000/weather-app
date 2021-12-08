@@ -1,3 +1,4 @@
+
 import { Data } from "../../interfaces/weather-interface";
 import "./Card.css";
 
