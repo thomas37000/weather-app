@@ -9,9 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Search main={{
-        temp: undefined
-      }} />
+      <Search temp={0}  />
     </div>
   );
 }

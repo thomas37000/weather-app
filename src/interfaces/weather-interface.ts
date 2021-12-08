@@ -3,11 +3,17 @@
 //   main: Array<Main>;
 // }
 
+// export interface IWeather {
+//   name?: string;
+//   main: {
+//     temp?: number;
+//   }[]
+// }
+
+
 export interface IWeather {
   name?: string;
-  main: {
-    temp?: number;
-  }[]
+  temp: number;
 }
 
 export interface Data {
