@@ -6,6 +6,9 @@ import { fetchWeather } from "../api/api";
 const Search: React.FC<IWeather> = () => {
   const [cities, setCities] = useState<string>("");
   const [weather, setWeather] = useState<IWeather>();
+  const [cold] = useState<string>("It's cold");
+  const [warm] = useState<string>("It's warm");
+
 
   const search = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -20,12 +23,6 @@ const Search: React.FC<IWeather> = () => {
     e.preventDefault();
     setCities(e.target.value);
   };
-
-  // function makeDate(date: Date) {
-  //   return new Date(date.getTime());
-  // }
-  // const newDate = new Date();
-  // console.log("date", makeDate(newDate));
 
   return (
     <>
@@ -43,8 +40,8 @@ const Search: React.FC<IWeather> = () => {
 
       {weather && weather.main && (
         <>
-          <div className="city">
-            <h2 className="">
+          <div className={weather.main.temp! < 15 ? "cold-bg" : "warm-bg"}>
+            <h2 className="city-name">
               <span>{weather.name}</span>
             </h2>
             <div className="city-temp">
@@ -53,6 +50,7 @@ const Search: React.FC<IWeather> = () => {
                 <sup>&deg;C</sup>
               </h3>
             </div>
+            <div className="temp">{weather.main.temp! < 15 ? cold : warm}</div>
           </div>
         </>
       )}
