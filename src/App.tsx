@@ -3,13 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import Search from "./components/Search";
 
-function App() {
+function App(): React.ReactNode {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Search />
+      <Search id={0} name={null} temp={null} />
     </div>
   );
 }

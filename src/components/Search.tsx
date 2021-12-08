@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { IWeather, Data, Main} from "../interfaces/weather-interface";
+import { Weather } from "../interfaces/weather-interface";
 import "./Search.css";
 import { fetchWeather } from "../api/api";
 
-const Search: React.FC<IWeather> = ({data, main}) => {
+const Search: React.FC<Weather> = () => {
   const [cities, setCities] = useState<string>("");
-  const [weather, setWeather] = useState<IWeather[]>([]);
+  const [weather, setWeather] = useState<{}>({});
 
   const search = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {

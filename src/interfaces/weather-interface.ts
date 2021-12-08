@@ -11,3 +11,10 @@ export interface Data {
 export interface Main {
   temp: number | undefined;
 }
+
+
+export interface Weather {
+  id: number;
+  name: string | null;
+  temp: number | null;
+}
