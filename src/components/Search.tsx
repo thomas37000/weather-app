@@ -67,27 +67,31 @@ const Search: React.FC<IWeather> = () => {
           onKeyPress={search}
         />
       </div>
-
-      {weather && weather.main && (
-        <>
-          <div className={weather.main.temp! < 15 ? "cold-bg" : "warm-bg"}>
-            <h2 className="city-name">
-              <span>{regexCity}</span>
-            </h2>
-            <div className="city-temp">
-              <h3>
-                {Math.round(weather.main.temp!)}
-                <sup>&deg;C</sup>
-              </h3>
-              <div>
-                felt real: {weather.main.feels_like}
-                <sup>&deg;C</sup>
+      <div className="card-container" key={weather && weather.id}>
+        {weather && weather.main && (
+          <>
+            <div className={weather.main.temp! < 15 ? "cold-bg" : "warm-bg"}>
+              <h2 className="city-name">
+                <span>{regexCity}</span>
+              </h2>
+              <div className="city-temp">
+                <h3>
+                  {Math.round(weather.main.temp!)}
+                  <sup>&deg;C</sup>
+                </h3>
+                <div>
+                  felt real: {weather.main.feels_like}
+                  <sup>&deg;C</sup>
+                </div>
+                <div className="desc">{weather.weather.description}</div>
+              </div>
+              <div className="temp">
+                {weather.main.temp! < 15 ? cold : warm}
               </div>
             </div>
-            <div className="temp">{weather.main.temp! < 15 ? cold : warm}</div>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
 
       <div className="vacation">
         Do you want to go in vacanation in a warm City in Winter, here some
