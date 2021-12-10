@@ -6,6 +6,7 @@ export interface IWeather {
 
 export interface Main {
   temp?: number;
+  feels_like: number;
 }
 
 export interface Data {

@@ -52,7 +52,7 @@ const Search: React.FC<IWeather> = () => {
       );
     });
 
-  const regexCity = weather && weather.name.replace('Arrondissement de', '');  
+  const regexCity = weather && weather.name.replace("Arrondissement de", "");
 
   return (
     <>
@@ -79,6 +79,10 @@ const Search: React.FC<IWeather> = () => {
                 {Math.round(weather.main.temp!)}
                 <sup>&deg;C</sup>
               </h3>
+              <div>
+                felt real: {weather.main.feels_like}
+                <sup>&deg;C</sup>
+              </div>
             </div>
             <div className="temp">{weather.main.temp! < 15 ? cold : warm}</div>
           </div>
