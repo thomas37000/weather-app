@@ -33,7 +33,6 @@ const Search: React.FC<IWeather> = () => {
           "https://raw.githubusercontent.com/thomas37000/openweathermap/main/src/components/WarmList.json"
         );
         setWarmCities(res.data);
-        console.log("warm", res.data);
       }, 500);
     };
     loadJsonWarmList();
@@ -53,6 +52,8 @@ const Search: React.FC<IWeather> = () => {
       );
     });
 
+  const regexCity = weather && weather.name.replace('Arrondissement de', '');  
+
   return (
     <>
       <div className="search">
@@ -71,7 +72,7 @@ const Search: React.FC<IWeather> = () => {
         <>
           <div className={weather.main.temp! < 15 ? "cold-bg" : "warm-bg"}>
             <h2 className="city-name">
-              <span>{weather.name}</span>
+              <span>{regexCity}</span>
             </h2>
             <div className="city-temp">
               <h3>
