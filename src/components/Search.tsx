@@ -95,7 +95,7 @@ const Search: React.FC<IWeather> = () => {
       </div>
 
       <div className="vacation">
-        Do you want to go in vacanation in a warm City in Winter, here some
+        Do you want to go in holidays in a warm City in Winter, here some
         examples where the temperature is superior at 15°
         <div className="warm-cities">{fetchJsonWarmList}</div>
       </div>
