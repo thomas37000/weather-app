@@ -1,10 +1,15 @@
+h3,
+.search-bar,
+.submit {
+  margin-top: 2rem;
+}
+
 .search-bar,
 .submit {
   outline: 0;
   padding: 15px;
   border: 0;
   border-radius: 5px;
-  margin: 0 0 15px;
   padding: 15px;
 }
 
@@ -49,8 +54,9 @@
   color: #f1f1f1;
 }
 
-.temp, .city-temp {
-    margin: 1rem 0;
+.temp,
+.city-temp {
+  margin: 1rem 0;
 }
 
 .warm-list {
@@ -71,4 +77,9 @@
     rgba(238, 238, 238, 1) 0%,
     rgba(2, 255, 163, 1) 100%
   );
+}
+
+.undefined-city {
+  background-color: red;
+  color: #fff;
 }

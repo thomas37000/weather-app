@@ -56,13 +56,14 @@ const Search: React.FC<IWeather> = () => {
 
   return (
     <>
+      <h3>Tapez le nom d'une ville pour avoir sa température</h3>
       <div className="search">
         <input
           type="text"
           name="search"
           id="searchBar"
           className="search-bar"
-          placeholder="Lyon"
+          placeholder="Rechercher une ville ..."
           onChange={searchCities}
           onKeyPress={search}
         />
