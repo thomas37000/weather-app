@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { IWeather } from "../interfaces/weather-interface";
 import "./Search.css";
 import { fetchWeather } from "../api/api";
+import Rain from "../icons/Rain";
+import Sun from "../icons/Sun";
 
 const Home: React.FC<IWeather> = () => {
   const [cities, setCities] = useState<string>("");
@@ -44,6 +46,8 @@ const Home: React.FC<IWeather> = () => {
         {weather && weather.main && (
           <>
             <div className={weather.main.temp! < 15 ? "cold-bg" : "warm-bg"}>
+              <div> {weather && weather.rain && <Rain />}</div>
+              <div> {weather && weather.sys && <Sun />}</div>
               <h2 className="city-name">
                 <span>{regexCity}</span>
               </h2>
