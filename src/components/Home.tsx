@@ -28,8 +28,7 @@ const Home: React.FC<IWeather> = () => {
       console.log("api", res);
       get_WeatherIcon(weatherIcon, res.weather[0].id);
       console.log("id icon", res.weather[0].id);
-      console.log("desc",res.weather[0].description);
-      
+      console.log("desc", res.weather[0].description);
     }
   };
 
@@ -73,13 +72,15 @@ const Home: React.FC<IWeather> = () => {
   };
 
   const regexCity = weather && weather.name.replace("Arrondissement de", "");
-  
+
   // icons from https://openweathermap.org/weather-conditions
   const iconWeather = `http://openweathermap.org/img/w/${icon}.png`;
 
   return (
     <>
-      <h3>Tapez le nom d'une ville pour avoir sa température</h3>
+      <h3 className="instruction">
+        Tapez le nom d'une ville pour avoir sa température
+      </h3>
       <div className="search">
         <input
           type="text"
@@ -95,7 +96,7 @@ const Home: React.FC<IWeather> = () => {
       <div className="card-container" key={weather && weather.id}>
         {weather && weather.main && (
           <>
-            <div className={weather.main.temp! < 15 ? "cold-bg" : "warm-bg"}>
+            <div>
               <img src={iconWeather} alt={weather.weather.description} />
               <i className={`wi ${weatherIcon}`} />
 
