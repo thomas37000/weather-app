@@ -9,10 +9,33 @@ const Routter = () => {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home main={undefined!} weather={undefined!} id={0} name={""} rain={undefined!} sys={undefined!}  />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              main={undefined!}
+              weather={undefined!}
+              id={0}
+              name={""}
+              rain={undefined!}
+              sys={undefined!}
+              wind={undefined!}
+            />
+          }
+        />
         <Route
           path="/temps"
-          element={<Search main={undefined!} weather={undefined!} id={0} name={""} rain={undefined!} sys={undefined!}  />}
+          element={
+            <Search
+              main={undefined!}
+              weather={undefined!}
+              id={0}
+              name={""}
+              rain={undefined!}
+              sys={undefined!}
+              wind={undefined!}
+            />
+          }
         />
       </Routes>
     </Router>
