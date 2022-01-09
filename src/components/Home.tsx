@@ -9,7 +9,6 @@ const Home: React.FC<IWeather> = () => {
   const [weather, setWeather] = useState<IWeather>();
   const [cold] = useState<string>("It's cold");
   const [warm] = useState<string>("It's warm");
-  const [description, setDescription] = useState<string>("");
   const [icon, setIcon] = useState<any | undefined>();
   const [weatherIcon] = useState({
     Thunderstorm: "wi-thunderstorm",
@@ -74,8 +73,6 @@ const Home: React.FC<IWeather> = () => {
   };
 
   const regexCity = weather && weather.name.replace("Arrondissement de", "");
-  const desc= weather && weather.weather.description;
-  console.log(desc);
   
   // icons from https://openweathermap.org/weather-conditions
   const iconWeather = `http://openweathermap.org/img/w/${icon}.png`;
