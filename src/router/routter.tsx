@@ -20,6 +20,8 @@ const Routter = () => {
               rain={undefined!}
               sys={undefined!}
               wind={undefined!}
+              cod={undefined!}
+              icon={undefined}
             />
           }
         />
@@ -34,6 +36,8 @@ const Routter = () => {
               rain={undefined!}
               sys={undefined!}
               wind={undefined!}
+              cod={undefined!}
+              icon={undefined}
             />
           }
         />

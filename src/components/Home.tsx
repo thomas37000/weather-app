@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { IWeather } from "../interfaces/weather-interface";
 import "weather-icons/css/weather-icons.css";
-import "./Search.css";
 import { fetchWeather } from "../api/api";
+import SearchIcon from "../icons/Search";
+import "./Search.css";
 
 const Home: React.FC<IWeather> = () => {
   const [cities, setCities] = useState<string>("");
@@ -35,7 +36,8 @@ const Home: React.FC<IWeather> = () => {
   function get_WeatherIcon(icons: any, rangeId: number) {
     switch (true) {
       case rangeId >= 200 && rangeId < 232:
-        setIcon({ icon: icons.Thunderstorm });
+        setIcon({ icon: weatherIcon.Thunderstorm });
+
         break;
       case rangeId >= 300 && rangeId <= 321:
         setIcon({ icon: icons.Drizzle });
@@ -47,21 +49,19 @@ const Home: React.FC<IWeather> = () => {
       case rangeId >= 600 && rangeId <= 622:
         setIcon({ icon: icons.Snow });
         console.log("neige");
-        break;
-      case rangeId >= 701 && rangeId <= 781:
-        setIcon({ icon: icons.Atmosphere });
-        break;
-      case rangeId === 800:
-        setIcon({ icon: icons.Clear });
+        console.log("icon Clouds", weatherIcon.Clouds);
+        console.log("nuageux");
         console.log("clear");
+        console.log("icon Clear", weatherIcon.Clear);
         break;
       case rangeId >= 801 && rangeId <= 804:
-        setIcon(icons.Clouds);
-        console.log("icon Clouds", icons.Clouds);
+        setIcon({ weatherIcon: icons.Clouds });
+
+        console.log("icon Clouds", weatherIcon, icons.Clouds);
         console.log("nuageux");
         break;
       default:
-        setIcon({ icon: icons.Clouds });
+        setIcon({ weatherIcon: icons.Clouds });
         console.log("case by default clouds");
     }
   }
@@ -91,8 +91,18 @@ const Home: React.FC<IWeather> = () => {
           onChange={searchCities}
           onKeyPress={search}
         />
+        <label
+          htmlFor="searchBar
+        "
+          className="searchIcon"
+        >
+          <SearchIcon />
+        </label>
       </div>
 
+      <div>
+        <p></p>
+      </div>
       <div className="card-container" key={weather && weather.id}>
         {weather && weather.main && (
           <>
@@ -120,6 +130,9 @@ const Home: React.FC<IWeather> = () => {
             </div>
           </>
         )}
+
+        {/* /* This condition will always return 'false' since the types have no overlap. */}
+        {/* {weather && weather.cod ? <p>Ville inconnue !</p> : <></>} */}
       </div>
     </>
   );

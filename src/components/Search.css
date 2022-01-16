@@ -18,6 +18,12 @@ h3,
   width: 30%;
 }
 
+.searchIcon {
+  margin-left: -2rem;
+  opacity: 0.5;
+  font-size:20px;
+}
+
 .submit {
   width: 100px;
   color: #f1f1f1;
@@ -33,11 +39,11 @@ h3,
 }
 
 .warm-bg {
-  background: rgb(219, 11, 11);
+  background: rgb(249, 255, 0);
   background: linear-gradient(
     90deg,
-    rgba(219, 11, 11, 1) 0%,
-    rgba(255, 129, 2, 1) 100%
+    rgba(249, 255, 0, 1) 0%,
+    rgba(231, 54, 0, 1) 100%
   );
 }
 
@@ -113,7 +119,7 @@ h3,
 @media only screen and (max-width: 768px) and (max-width: 1024px) {
   .card-container {
     width: 20em;
-    font-size:initial;
+    font-size: initial;
   }
 
   .instruction {

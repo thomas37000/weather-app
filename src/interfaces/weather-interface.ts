@@ -1,4 +1,5 @@
 export interface IWeather {
+  icon: any;
   main: Main;
   weather: Weather;
   id:   number;
@@ -6,6 +7,7 @@ export interface IWeather {
   rain: IRain;
   sys: Sun;
   wind: Wind;
+  cod: Error;
 }
 
 export interface Main {
@@ -36,4 +38,8 @@ export interface Wind {
   deg: number;
   gust: number;
   speed: number;
+}
+
+export interface Error {
+  cod: string;
 }

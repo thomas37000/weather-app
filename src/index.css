@@ -23,5 +23,5 @@ html::before {
   z-index: -1;
   background-image: url("https://paysages.photos/wp-content/uploads/2017/06/paysage-nature-2-1-1024x684.jpg");
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
 }

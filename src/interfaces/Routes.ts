@@ -1,5 +1,6 @@
 import IRoutes from "./IRoutes";
 import Home from "../components/Home";
+import Search from "../components/Search";
 
 const routes: IRoutes[] = [
     {
@@ -8,12 +9,12 @@ const routes: IRoutes[] = [
         component: Home,
         exact: true
     },
-    // {
-    //     path: '/search',
-    //     name: 'movies',
-    //     component: CardMoviesById,
-    //     exact: true
-    // }
+    {
+        path: '/temps',
+        name: 'temps',
+        component: Search,
+        exact: true
+    }
 ]
 
 export default routes;
